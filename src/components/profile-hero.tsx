@@ -1,5 +1,5 @@
-import { ArrowDownCircle, Database, GitMerge, LineChart } from "lucide-react";
-import { Button } from "./ui/button";
+import { Database, GitMerge, LineChart } from "lucide-react";
+import { ProfileHeroButton, ScrollDownButton } from "./profile-hero-button";
 
 export default function ProfileHero() {
   return (
@@ -57,44 +57,26 @@ export default function ProfileHero() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                <Button
+                <ProfileHeroButton
                   className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg text-lg"
-                  onClick={() =>
-                    document
-                      .getElementById("contact")
-                      ?.scrollIntoView({ behavior: "smooth" })
-                  }
+                  elementId="contact"
                 >
                   Contact Me
-                </Button>
+                </ProfileHeroButton>
 
-                <Button
+                <ProfileHeroButton
                   variant="outline"
                   className="border-blue-500 text-blue-400 hover:bg-blue-900/20 px-6 py-3 rounded-lg text-lg"
-                  onClick={() =>
-                    document
-                      .getElementById("projects")
-                      ?.scrollIntoView({ behavior: "smooth" })
-                  }
+                  elementId="projects"
                 >
                   View Projects
-                </Button>
+                </ProfileHeroButton>
               </div>
             </div>
           </div>
 
           <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-            <Button
-              variant="ghost"
-              className="text-blue-400 hover:text-blue-300 hover:bg-transparent p-0"
-              onClick={() =>
-                document
-                  .getElementById("projects")
-                  ?.scrollIntoView({ behavior: "smooth" })
-              }
-            >
-              <ArrowDownCircle className="w-10 h-10" />
-            </Button>
+            <ScrollDownButton elementId="projects" />
           </div>
         </div>
       </div>
